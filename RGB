@@ -1,0 +1,8 @@
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)#to convert to grayscale
+print(gray.shape)#(512,512,1)the gray intensities change from 0 to 255
+
+#RESIZE
+resized = cv2.resize(image, (500, 300))
+
+#gaussian blur
+blur = cv2.GaussianBlur(image, (5, 5), 0)
