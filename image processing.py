@@ -9,3 +9,14 @@ cropped = img[100:300, 200:500]
 cv2.imshow("Cropped Image", cropped)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+#resizing
+import cv2
+
+img = cv2.imread("image.jpg")
+
+resized = cv2.resize(img, (500, 300))
+
+cv2.imshow("Resized Image", resized)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
