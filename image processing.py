@@ -41,3 +41,14 @@ rotated = cv2.rotate(
     img,
     cv2.ROTATE_180
 )
+
+#flipping
+import cv2
+
+img = cv2.imread("image.jpg")
+flipped_1 = cv2.flip(img, 0)
+flipped = cv2.flip(img, 1)
+#0 vertical.-1 for both
+cv2.imshow("Horizontal Flip", flipped)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
