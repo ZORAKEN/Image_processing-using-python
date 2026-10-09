@@ -20,3 +20,24 @@ resized = cv2.resize(img, (500, 300))
 cv2.imshow("Resized Image", resized)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+#Maintain the original aspect ratio
+resized = cv2.resize(
+    img, None,
+    fx=0.5,
+    fy=0.5
+)
+
+#rotate
+rotated = cv2.rotate(
+    img,
+    cv2.ROTATE_90_CLOCKWISE
+)
+rotated = cv2.rotate(
+    img,
+    cv2.ROTATE_90_COUNTERCLOCKWISE
+)
+rotated = cv2.rotate(
+    img,
+    cv2.ROTATE_180
+)
