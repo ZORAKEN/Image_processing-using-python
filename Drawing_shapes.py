@@ -28,3 +28,7 @@ cv2.polylines(img, [points], True, (255, 0, 255), 3)
 
 #to get afilled polygon
 cv2.fillPoly(img, [points], (255, 0, 255))
+
+cv2.imshow("Shapes", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
