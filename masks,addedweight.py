@@ -109,3 +109,24 @@ _, mask = cv2.threshold(
 )
 
 result = cv2.bitwise_and(img, img, mask=mask)
+
+
+
+#blending
+import cv2
+
+img1 = cv2.imread("image1.jpg")
+img2 = cv2.imread("image2.jpg")
+
+# Resize images to the same dimensions
+img2 = cv2.resize(img2, (img1.shape[1], img1.shape[0]))
+
+# Add weighted images
+result = cv2.addWeighted(img1, 0.7, img2, 0.3, 0)
+
+cv2.imshow("Image 1", img1)
+cv2.imshow("Image 2", img2)
+cv2.imshow("Blended Image", result)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
