@@ -31,6 +31,25 @@ _, tozero_inv = cv2.threshold(
     gray, 127, 255, cv2.THRESH_TOZERO_INV
 )
 
+
+adaptive_mean = cv2.adaptiveThreshold(
+    gray, 255,
+    cv2.ADAPTIVE_THRESH_MEAN_C,
+    cv2.THRESH_BINARY,
+    11, 2
+)
+
+adaptive_gaussian = cv2.adaptiveThreshold(
+    gray, 255,
+    cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+    cv2.THRESH_BINARY,
+    11, 2
+)
+
+
+
+
+
 # Display results
 cv2.imshow("Original Grayscale", gray)
 cv2.imshow("Binary", binary)
@@ -38,6 +57,8 @@ cv2.imshow("Binary Inverse", binary_inv)
 cv2.imshow("Truncation", trunc)
 cv2.imshow("To Zero", tozero)
 cv2.imshow("To Zero Inverse", tozero_inv)
+cv2.imshow("Adaptive Mean", adaptive_mean)
+cv2.imshow("Adaptive Gaussian", adaptive_gaussian)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
